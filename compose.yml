@@ -1,0 +1,14 @@
+services:
+  app:
+    container_name: unifi
+    image: jacobalberty/unifi
+    user: unifi
+    volumes:
+      - ./unifi/:/unifi/
+    environment:
+      - TZ='Africa/Ho_Chi_Minh'
+    ports:
+      - 8080:8080
+      - 8443:8443
+      - 3478:3478/udp
+      - 10001:10001/udp
